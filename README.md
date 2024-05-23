@@ -79,6 +79,7 @@
   ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/3d4654e1-f87d-412c-b12b-4c4379878c46)
 -  Esperar la Creación del Clúster
   - La creación del clúster tomará aproximadamente 20-25 minutos. Una vez que todos los nodos estén en estado "Running" y todo esté en verde, el clúster estará listo para usarse.
+  ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/65da58a7-b080-47e4-b2fe-4ca971f9a638)
 - Consideraciones Adicionales
   - Puertos: Asegúrate de abrir los puertos necesarios para acceder a las interfaces de administración del clúster.
   - Persistencia en S3: Configura correctamente el bucket S3 para que los datos de los notebooks sean persistentes.
@@ -88,33 +89,80 @@ Esta guía detalla el proceso de configuración y uso de un clúster en Amazon E
 
 - Creación del Clúster
   - Verificación del Clúster
+    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/fa68fc09-6f4f-4b1d-b0eb-ae2166bf1c8c)
     - Después de aproximadamente 25 minutos, el clúster debería estar creado.
     - Un círculo en verde indica que el clúster está operativo.
   - Almacenamiento en S3
+    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/2a426b6e-faec-4379-90ed-841fba09b94c)
     - Los notebooks deben ser almacenados en S3.
     - Crear un bucket en S3 llamado notebooks.
+    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/66109d2e-4d0f-41dd-a439-87c0fff2e171)
+    - Recuerda que el nombre del bucket debe tener el mismo nombre que escogimos al configurar la Persistencia de Notebooks en S3 del cluster
+    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/bc15fb30-edf7-4cd5-8ef0-e68134100a51)
+    - Crear bucket
+    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/4794e263-ecc6-41ec-82a6-e90f01a46f81)
+    - Confirmamos que el bucket se haya creado exitosamente.
+    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/4e5bd721-fc01-4f21-aa31-9122ea6d46e9)
   - Configuración del Bucket
     - Asegurarse de que el bucket está listo para almacenar los Jupyter Notebooks.
 - Conexión al Clúster
-  - Filtrar Clúster Activos
+  - volvemos al servicio ERM a ver nuestro cluster
+  ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/ad483a9b-6f49-4cbe-a044-309484643be6)
+  - Filtrar Clúster Activos(opcional si tienes varios clusters)
     - En la interfaz de administración, filtrar para mostrar solo los clústeres activos.
+    - Damos clic en el nombre de nuestro cluster para ingresar y ver las configuraciones
+    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/43c96fd8-063d-46a1-9511-403011f76298)
     - Conectar al nodo master vía SSH.
+      - Damos clic en el siguiente link
+      ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/30e3db54-d738-4e16-8563-60d7f9e8c0ab)
+      - Al momento de dar clic nos aparecera lo siguiente:
+      ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/4c5008a9-9b21-4214-8b01-6b43d4aa2304)
+      - Copiamos la instruccion que nos proporciona, que en nuestro caso seria el siguiente:
+      ```
+      ssh -i ~/vockey.pem hadoop@ec2-44-210-115-214.compute-1.amazonaws.com
+      ```
+      - Abrimos una terminal(opcional):
+        - Crea una consola que tenga previamente descargada las claves para conectarse al nodo master
+        ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/ad20c1c4-e6eb-4c25-89e5-bf1529f8d94e)
+
   - Instrucciones SSH
     - Seguir las instrucciones proporcionadas para conectarse al nodo master.
     - Descargar las claves necesarias y usar ssh para acceder al nodo master.
   - Uso de HDFS
     - Una vez conectado al nodo master, utilizar HDFS para manejar el sistema de archivos distribuido.
 - Apertura de Puertos
+- En nuestro cluster, debemos dar clic en la opcion "aplicaciones"
+![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/e39c35b7-c648-4f99-bade-02930a072f43)
+- Al bajar un poco en la pagina, nos encontraremos las aplicaciones principlaes que vamos a emplear(IU de la aplicación en el nodo principal):
+![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/f8a02ccf-606b-41fd-82aa-dc3f1bb129e6)
   - Puertos Necesarios
     - Los puertos que deben estar abiertos son:
+      ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/6967065e-f258-4d6c-91d7-5330c001d618)
       - JupyterHub: 8888
       - Zeppelin: 8890
-      - Otros: 9443
+      - Otros: 9443 --> Hue
   - Configuración de Puertos en el Clúster
+  ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/c2b97ab5-9097-4cb9-9e66-d35139758942)
     - En la sección de Security Groups, editar las políticas para agregar los puertos necesarios.
+    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/9bae5d62-cd28-45e6-9396-7b2cacadc657)
     - Verificar que el puerto 22 para SSH esté abierto.
+    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/ca556866-0f07-40da-8f17-1d8bf3ed6d21)
+    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/17b1f3f2-6cda-4eba-960e-8c65572a1a2f)
+
   - Verificación de Puertos
     - Asegurarse de que los puertos estén configurados correctamente tanto en el Security Group del nodo master como en la red WiFi.
+    - Nos iremos al servico "ec2".
+    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/d11a9e81-6fc0-4cb6-b943-2b1eb312cd9f)
+    - A la opcion de Security Groups
+    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/3e83bd60-cee5-4dfc-9347-fc29f4592651)
+    - Vamos a seleccionar el nodo master para editar las politicas de seguridad.
+    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/9bce3426-f43e-4b0d-839d-c3d87e98c051)
+    - Despues de dar clic e ingresar, nos vamos a las reglas de entrada y las editamos.
+    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/46011522-7fe9-4754-a7c8-e288ef09d16f)
+    - Verificamos que los puertos 22, 8888, 9443, 8890 esten habilitados, si no lo estan, debes crearlos.
+    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/7b05ba66-09b8-4c19-8d4b-41b5cfee1b64)
+    - 
+
 - Uso de JupyterHub y Zeppelin
   - Acceso a JupyterHub
     - Conectar a JupyterHub usando la URL y el puerto configurado (9443).
