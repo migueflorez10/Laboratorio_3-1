@@ -28,8 +28,8 @@
   ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/baef0681-6fd2-454c-bfcb-fa5e2edf0188)
   - Opciones Avanzadas: Selecciona "Go to advanced options".
 - Configurar el Clúster
-  ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/4c758e28-f865-41c0-afc6-70df2435c562)
-  - Versión de EMR: Selecciona la versión 6.3.1.
+  ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/96fc047c-d94e-4615-986d-6d2f41cfb282)
+  - Versión de EMR: Selecciona la versión 6.14.0
   - Componentes del Clúster:
     - Hadoop: Framework para el procesamiento distribuido de grandes conjuntos de datos.
     - Hive: Data warehouse que facilita consultas SQL-like sobre grandes conjuntos de datos.
@@ -38,11 +38,12 @@
     - Livy: Servicio REST para la interacción con Spark (opcional, no se selecciona en este caso).
     - HBase: Base de datos NoSQL distribuida.
     - JupyterHub: Entorno de notebooks para data science y análisis.
+    - Entre otros.
 - Configuración del Catálogo de datos de AWS Glue
   ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/0948597d-f9d1-4403-b171-8d662d2992b5)
 - Configurar Persistencia de Notebooks en S3
   - Configurar S3: Para persistir los notebooks creados en JupyterHub, configura un bucket S3.
-  ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/03c2b6aa-8ea9-494c-971f-47171381e6f6)
+  ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/9947a521-13c3-4986-9ddd-32803c394535)
     ```
           [
             {
@@ -56,12 +57,12 @@
     ```
     - Crear Bucket: Ve a S3 y crea un nuevo bucket. El nombre debe ser único a nivel global (por ejemplo, notebooks-miguel).
 - Configuración de Hardware
-  - Tipo de Instancia: Cambia las instancias por m4.xlarge (recomendado para cuentas de AWS Educate).
-  ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/1e5cd945-ecb1-44ff-949d-92a22af9d989)
+  - Tipo de Instancia: Cambia las instancias por m5.xlarge (recomendado para cuentas de AWS Educate).
+  ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/88f5bb55-74d7-464a-afeb-bc0ff34ecce2)
   - Uso de Instancias Spot: Selecciona instancias Spot para reducir costos.
   - Almacenamiento: Configura 20 GB de almacenamiento para los nodos.
   ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/cc75b0ff-f487-4a9f-b41a-cbbe24e3af23)
-  ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/38727512-277c-4f0e-8e8a-661ea989d43a)
+  ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/1f2a24b0-71c5-4347-a8d1-6da7ff49f3a1)
 - Configurar Auto Terminación
   - Auto Terminación: Habilita la auto terminación para que el clúster se destruya después de 1 hora de inactividad, ahorrando costos.
 - Finalizar Configuración
@@ -79,7 +80,7 @@
   ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/3d4654e1-f87d-412c-b12b-4c4379878c46)
 -  Esperar la Creación del Clúster
   - La creación del clúster tomará aproximadamente 20-25 minutos. Una vez que todos los nodos estén en estado "Running" y todo esté en verde, el clúster estará listo para usarse.
-  ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/65da58a7-b080-47e4-b2fe-4ca971f9a638)
+  ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/856b44fa-4fa1-45f1-aaea-3ea78066b59a)
 - Consideraciones Adicionales
   - Puertos: Asegúrate de abrir los puertos necesarios para acceder a las interfaces de administración del clúster.
   - Persistencia en S3: Configura correctamente el bucket S3 para que los datos de los notebooks sean persistentes.
@@ -89,7 +90,7 @@ Esta guía detalla el proceso de configuración y uso de un clúster en Amazon E
 
 - Creación del Clúster
   - Verificación del Clúster
-    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/fa68fc09-6f4f-4b1d-b0eb-ae2166bf1c8c)
+    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/42867942-9c59-4f4b-9823-28d54a58ea2d)
     - Después de aproximadamente 25 minutos, el clúster debería estar creado.
     - Un círculo en verde indica que el clúster está operativo.
   - Almacenamiento en S3
@@ -98,11 +99,11 @@ Esta guía detalla el proceso de configuración y uso de un clúster en Amazon E
     - Crear un bucket en S3 llamado notebooks.
     ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/66109d2e-4d0f-41dd-a439-87c0fff2e171)
     - Recuerda que el nombre del bucket debe tener el mismo nombre que escogimos al configurar la Persistencia de Notebooks en S3 del cluster
-    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/bc15fb30-edf7-4cd5-8ef0-e68134100a51)
+    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/1ea196fa-e96e-42f7-8ba4-d8a09403dbb7)
     - Crear bucket
     ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/4794e263-ecc6-41ec-82a6-e90f01a46f81)
     - Confirmamos que el bucket se haya creado exitosamente.
-    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/4e5bd721-fc01-4f21-aa31-9122ea6d46e9)
+    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/5b59db5a-032b-40ec-be98-2e5fc7d4bac6)
   - Configuración del Bucket
     - Asegurarse de que el bucket está listo para almacenar los Jupyter Notebooks.
 - Conexión al Clúster
@@ -111,7 +112,7 @@ Esta guía detalla el proceso de configuración y uso de un clúster en Amazon E
   - Filtrar Clúster Activos(opcional si tienes varios clusters)
     - En la interfaz de administración, filtrar para mostrar solo los clústeres activos.
     - Damos clic en el nombre de nuestro cluster para ingresar y ver las configuraciones
-    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/43c96fd8-063d-46a1-9511-403011f76298)
+    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/141808d9-d5c9-4059-9c1c-eb544b3cf6cb)
     - Conectar al nodo master vía SSH.
       - Damos clic en el siguiente link
       ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/30e3db54-d738-4e16-8563-60d7f9e8c0ab)
@@ -137,10 +138,10 @@ Esta guía detalla el proceso de configuración y uso de un clúster en Amazon E
 ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/f8a02ccf-606b-41fd-82aa-dc3f1bb129e6)
   - Puertos Necesarios
     - Los puertos que deben estar abiertos son:
-      ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/6967065e-f258-4d6c-91d7-5330c001d618)
-      - JupyterHub: 8888
+      ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/e87b61c8-c3ed-44b2-a0f2-d04d330110e1)
+      - JupyterHub: 9443
       - Zeppelin: 8890
-      - Otros: 9443 --> Hue
+      - Hue: 8888
   - Configuración de Puertos en el Clúster
   ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/c2b97ab5-9097-4cb9-9e66-d35139758942)
     - En la sección de Security Groups, editar las políticas para agregar los puertos necesarios.
