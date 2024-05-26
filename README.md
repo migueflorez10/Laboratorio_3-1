@@ -162,6 +162,30 @@ Esta guía detalla el proceso de configuración y uso de un clúster en Amazon E
     ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/46011522-7fe9-4754-a7c8-e288ef09d16f)
     - Verificamos que los puertos 22, 8888, 9443, 8890 esten habilitados, si no lo estan, debes crearlos.
     ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/7b05ba66-09b8-4c19-8d4b-41b5cfee1b64)
+    - Regresamos a nustro cluster
+    - Volvemos al apartado de aplicaciones y copiamos el link de la interfaz de `HUE`.
+    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/7976468d-0ad1-4c85-97b0-dba917da091f)
+    - Lo pegamos en el navegador, nos conectamos y podremos visualizar la siguiente interfaz:
+    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/c3c6eb37-675d-4363-b0da-6f6a6e835d52)
+    - Creamos una cuenta
+      - Creamos un `username`
+      - Creamos un `password`
+      ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/8f6311ca-b9ab-4bff-b20b-d297d15b9907)
+    - Al momento de crear la cuenta, visualizaremos lo siguiente:
+    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/3250c5ff-9713-4a3e-b01d-447599c40991)
+    - Lo que observamos es la interfaz de administracion de todos los servicios de `HUE`y `Spark`
+    - En esta seccion podemos observar todos los servicios
+    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/05fe95b2-3a21-4ab6-adef-53dcf5af3875)
+    - Entre estos servicios, vamos a entrar al servicio `Hive` (opcional)
+    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/e10d0271-3f88-4a47-ae4c-1b6bd4f40d48)
+    - En la interfaz SQL vamos a ingresar el siguiente comando (opcional):
+    ```
+    show databases
+    ```
+    - Corremos el comando (opcional):
+    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/c11fd390-d9df-461d-848f-bed70d49e236)
+    - Observamos que por el momento solo tenemos una base de datos llamada `Default`.
+    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/14f33756-47de-4485-87be-775f3c34245e)
     - 
 
 - Uso de JupyterHub y Zeppelin
