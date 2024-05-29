@@ -256,9 +256,27 @@ Esta guía detalla el proceso de configuración y uso de un clúster en Amazon E
     - Almacenar datos críticos en S3 para evitar pérdidas.
     - Utilizar HDFS para datos temporales y pruebas.
 
-
-
-
+## Laboratorio HDFS
+- Por Terminal: (cada persona tiene su propio servidor ec2 del master EMR)
+![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/f5c31d38-2ca4-4f44-ae28-d5d07e0199dc)
+- GESTIÓN DE ARCHIVOS VÍA HUE en AMAZON EMR
+  - Nos vamos a la seccion de files en el servicio hue:
+    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/46a002cc-91a6-4efd-8e66-a0e3a7cd7b80)
+  - Vamos a crear un directorio nuevo llamado "datasets" y uno llamado "onu".
+    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/3e208cab-0cdd-427f-9418-4f78541b704b)
+    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/62811726-e19f-426d-9c4f-d20aef231845)
+    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/563c4b85-b515-40dd-9f17-4c16b786098f)
+    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/91b899e6-0572-42f4-8482-8d1e40ad779e)
+  - Vamos a subir los siguientes archivos en nuestra carpeta onu dentro de datasets
+    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/d2ad40a2-cf7f-4493-87b2-c08185d8b2ce)
+  - los archivos que vamos a tomar son los siguientes
+    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/1c939e1a-a770-407b-b04d-afe80d146294)
+  - NOTA: Recuerda que esos archivos se encuentran en la carpeta onu del directorio datasets que esta dentro del repositorio
+    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/4e63ab3f-927c-40de-8ce4-8829f1b44687)
+  - Ahora podemos ver el contenido de nuestros archivos en el servicio hue:
+    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/65bbbcf2-23e9-4f61-8786-c03f0998a8cc)
+    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/2a62c3e0-3ccd-4d79-a6d8-04035ff92580)
+    
 ## Resultados Esperados
 
 ## Descripción del Ambiente de Desarrollo y Técnico
