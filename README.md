@@ -221,13 +221,26 @@ Esta guía detalla el proceso de configuración y uso de un clúster en Amazon E
         - jupyter
     ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/23164d8d-fc75-4b5f-a7ea-f53d91bfeb79)
   - Creación y Almacenamiento de Notebooks
-    
+    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/8b9f5c7e-54a1-474d-a535-aeb1fd97c9af)
     - Crear notebooks en JupyterHub.
+    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/00735ddd-c04f-4779-91a7-c73358de4d19)
     - Asegurarse de que los notebooks se almacenan en S3 para evitar la pérdida de datos.
+      - ponemos otro nombre al notebook para verificar
+      ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/403163a9-6506-4a6a-9f4f-7c19588a14e7)
+      ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/b4634b0e-906f-48af-8d59-9bf43f98c646)
+      ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/28fc70ea-b1a7-438b-abf8-eadebb2d9595)
+
   - Configuración de Spark en JupyterHub
     - Verificar las variables spark y SparkContext para confirmar que Spark está configurado correctamente.
   - Uso de Zeppelin
+    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/2b84d53a-8712-4bb1-8ba8-ca3f9fa075fa)
     - Conectar a Zeppelin usando el puerto 8890.
+    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/15fad67b-9fd9-471d-8343-77a727ef6189)
+    - Creamos un nuevo "note"
+    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/00e9580a-2a66-4273-be43-753fc2a07022)
+    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/6cea8361-14e8-428c-93b6-60f1f2488e8f)
+    - Haciendo los siguientes comandos  podemos confirmar que ya tenemos conexiones spark
+    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/8493fbf1-95fc-4392-b17f-4f39cf8890d0)
     - Zeppelin soporta múltiples lenguajes, incluyendo Spark y SQL.
 - Administración y Otros Servicios
   - Interfaz de Administración de EMR
