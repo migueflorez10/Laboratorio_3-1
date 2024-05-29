@@ -206,14 +206,22 @@ Esta guía detalla el proceso de configuración y uso de un clúster en Amazon E
     ```
     - Con estos pasos debemos poder solucionar el error, y veriamos lo siguiente en el servicio Hue:
     ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/2aa51d56-b582-4727-8873-6a345ccc1cdb)
-    - 
+    - Ya podriamos crear y subir cualquier archivo que necesitemos para HDFS.
 
     
 - Uso de JupyterHub y Zeppelin
   - Acceso a JupyterHub
     - Conectar a JupyterHub usando la URL y el puerto configurado (9443).
+    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/b2ab57f6-97ca-4827-bb5b-d90d09dd88c5)
+    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/01e1cfc5-eb46-4a29-aeda-b9e185494ce4)
     - Crear un usuario y contraseña la primera vez que se ingrese.
+    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/0aa2fd20-8bb8-4324-bab6-83471ccd1025)
+      - Utilizar el usuario por defecto:
+        - jovyan
+        - jupyter
+    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/23164d8d-fc75-4b5f-a7ea-f53d91bfeb79)
   - Creación y Almacenamiento de Notebooks
+    
     - Crear notebooks en JupyterHub.
     - Asegurarse de que los notebooks se almacenan en S3 para evitar la pérdida de datos.
   - Configuración de Spark en JupyterHub
