@@ -186,8 +186,29 @@ Esta guía detalla el proceso de configuración y uso de un clúster en Amazon E
     ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/c11fd390-d9df-461d-848f-bed70d49e236)
     - Observamos que por el momento solo tenemos una base de datos llamada `Default`.
     ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/14f33756-47de-4485-87be-775f3c34245e)
+    - Ahora, debemos ir a la seccion "files"
+    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/ec177434-110b-4247-b0f9-8b1b56e897de)
+    - Podemos observar un mensaje que nos indica que tenemos un error en los servicios HDFS, para poder solucionar ese error, vamos a
+    realizar los siguientes pasos:
+    - Entraremos al por SSH al nodo master del cluster, esto lo podemos hacer entrando al nodo master en el servicio ec2.
+    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/d8e20542-62a3-4f76-bd17-436106dfe588)
+    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/24292823-7324-47e4-bc9c-47bb89195c25)
+    - Entrar al EC2 master por medio de SSH:
+    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/f6fdf52a-664a-4a39-96ef-f5db9219280e)
+    - Realizamos los siguientes comandos:
+    - Ejecuta el siguiente comando para editar el archivo hue.ini:
+    ```
+    sudo sed -i 's/.ec2.internal:14000/.ec2.internal:9870/' /etc/hue/conf/hue.ini
+    ```
+    - A continuación, reinicia el servicio hue:
+    ```
+    sudo systemctl restart hue
+    ```
+    - Con estos pasos debemos poder solucionar el error, y veriamos lo siguiente en el servicio Hue:
+    ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/2aa51d56-b582-4727-8873-6a345ccc1cdb)
     - 
 
+    
 - Uso de JupyterHub y Zeppelin
   - Acceso a JupyterHub
     - Conectar a JupyterHub usando la URL y el puerto configurado (9443).
