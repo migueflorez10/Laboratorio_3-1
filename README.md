@@ -278,5 +278,25 @@ Esta guía detalla el proceso de configuración y uso de un clúster en Amazon E
     ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/2a62c3e0-3ccd-4d79-a6d8-04035ff92580)
     
 ## Resultados Esperados
+- Gestión de Archivos en HDFS y S3: Los estudiantes deberán demostrar habilidades prácticas en la gestión de archivos utilizando HDFS y S3 en un entorno de clúster EMR. Se espera que copien y gestionen archivos desde y hacia HDFS usando tanto HUE como SSH. Asimismo, deberán realizar las mismas operaciones con AWS S3. La verificación de estas tareas se hará a través de evidencias de las operaciones completadas, mostrando que los archivos han sido correctamente gestionados en ambos sistemas de almacenamiento.
+
+- Configuración de Accesos Públicos en S3: Cada estudiante deberá configurar los buckets de S3 con acceso de lectura pública. Esto se verificará mediante la comprobación de la accesibilidad de los archivos a través de URLs públicas.
+
+- Documentación y Evidencias: Los estudiantes deberán enviar un informe detallado que incluya las evidencias de las actividades realizadas. Este informe deberá incluir capturas de pantalla y comandos utilizados, así como la URL del bucket público de S3 donde están los datasets. También deberán depositar las evidencias en el formato template distribuido en el OneDrive del curso.
+
 
 ## Descripción del Ambiente de Desarrollo y Técnico
+- Cluster EMR: El laboratorio se llevará a cabo en un clúster EMR previamente configurado en el Lab 3-0. Cada estudiante tiene acceso a su propio servidor EC2 del nodo maestro del clúster EMR, al cual se conectarán mediante SSH para realizar las actividades de gestión de archivos en HDFS. El clúster debe tener HUE activado y un usuario 'hadoop' creado.
+
+- Herramientas Utilizadas:
+  - HDFS: Sistema de archivos distribuido utilizado para almacenar grandes volúmenes de datos.
+  - Hue: Interfaz web utilizada para gestionar archivos en HDFS y S3 de manera gráfica.
+  - SSH: Protocolo utilizado para acceder de forma segura al nodo maestro del clúster EMR y ejecutar comandos de gestión de archivos en HDFS.
+  - AWS S3: Servicio de almacenamiento de objetos utilizado para almacenar y recuperar cualquier cantidad de datos en cualquier momento y desde cualquier lugar en la web.
+- Comandos y Operaciones:
+  - HDFS CLI: Se utilizarán comandos como hdfs dfs -put, hdfs dfs -get, hdfs dfs -copyFromLocal, entre otros, para la gestión de archivos en HDFS.
+  - AWS CLI: Se utilizará para copiar archivos hacia y desde AWS S3.
+  - Hue: Se utilizará para la gestión gráfica de archivos en HDFS y S3, permitiendo operaciones como subir, descargar y explorar archivos.
+- Dataset: Se utilizarán archivos de datos disponibles en el repositorio de GitHub del curso y en el bucket de S3 'st0263datasets'. Los estudiantes deberán copiar estos datasets al HDFS y S3 según se indique en las instrucciones del laboratorio.
+
+- Seguridad y Acceso: Es crucial que los estudiantes configuren el acceso público a los buckets de S3 para permitir la lectura pública de los archivos. Esto se logrará siguiendo las instrucciones disponibles en la documentación de AWS S3.
