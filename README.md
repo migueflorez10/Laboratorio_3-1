@@ -77,7 +77,7 @@
     - Escoger la opcion "ERM_AutoScaling_DefaultRole"
   ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/c204f52b-fb45-4e3d-8398-aada4a1834f2)
   - Crear Clúster: Haz clic en "Create cluster".
-  ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/3d4654e1-f87d-412c-b12b-4c4379878c46)
+  ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/2aa6e678-c434-4fd6-8765-e95c2ddd3bd3)
 -  Esperar la Creación del Clúster
   - La creación del clúster tomará aproximadamente 20-25 minutos. Una vez que todos los nodos estén en estado "Running" y todo esté en verde, el clúster estará listo para usarse.
   ![image](https://github.com/migueflorez10/Laboratorio_3-1/assets/68928440/856b44fa-4fa1-45f1-aaea-3ea78066b59a)
